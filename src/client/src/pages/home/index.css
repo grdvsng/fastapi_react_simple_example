@@ -1,0 +1,19 @@
+.rabbit-container
+{
+    background: silver;
+}
+
+.prefferences-container
+{
+    background: white;
+}
+
+.btn-dark:active
+{
+    background: gray !important;
+}
+
+.rabbit-container-bought
+{
+    background: rgb(163, 163, 163);
+}
