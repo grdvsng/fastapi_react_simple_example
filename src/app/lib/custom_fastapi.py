@@ -1,4 +1,5 @@
 import re
+import inspect
 
 from os                  import path as os_path
 from sys                 import path as sys_path
@@ -62,7 +63,7 @@ class CustomFastAPI( FastAPI ):
             setattr( func, '__method__', method )
 
             if method in ALLOW_HTTP_METHODS_FOR_DIRECTORY_DICORATE:
-                return request_handler( url )( func )
+                return request_handler( url, response_model=func.__annotations__.get( 'return', None ))( func )
             else:
                 raise CustomFastAPIError( f"Can't decorate function='{ func.__name__ }' with http mathod='{method}'")
 
