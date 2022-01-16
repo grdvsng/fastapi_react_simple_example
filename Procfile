@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -k uvicorn.workers.UvicornWorke src.main:app
+web: bundle exec unicorn -p 8008 -c ./unicorn.rb
