@@ -1,6 +1,10 @@
 #### Example of using FastAPI with Reac + create dev server wsl2 + docker
-#### Setup
+An example of creating a full-stack application via FastAPI + ReactJS. 
+Bonus: 
+* deploy via docker and wsl2.
+* deploy via heroku
 
+#### Setup
 ###### Usual
 1. Walk to the rep directory
 2. Run command 'pip install -r ./src/requirements'
@@ -12,8 +16,11 @@
 5. Configure wsl2 https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-containers
 6. Enjoy http://127.0.0.1:8000/
 
+#### Heroku 
+* client: https://fastapi-react-test-77749.herokuapp.com/
+* api docs: https://fastapi-react-test-77749.herokuapp.com/docs
 ###### HELP
 * Run service command 'uvicorn src.main:app --host 0.0.0.0 --reload --port 8000'
 * api docs http://127.0.0.1:8000/docs
-* interface http://localhost:8000/
+* client http://localhost:8000/
 * tests cmd "pytest"
