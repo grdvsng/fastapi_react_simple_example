@@ -20,6 +20,10 @@ class PriorityFilter( BaseModel, Generic[T] ):
 
     @property
     def priority_fields( self ) -> Dict[str, str]:
+        """
+            Fields specified in the class implementation 
+            that are not equal to None will be used as priority when generating results
+        """
         return {
             field_name: getattr( self, field_name )
             for field_name in self.__class__.__fields__.keys( )
@@ -28,6 +32,10 @@ class PriorityFilter( BaseModel, Generic[T] ):
         }
     
     def get_field_priority( self, elem: T ) -> int:
+        """
+            Method calculates priority by instance data fields. 
+            Every value in data row simmular with filter field row append 1 point to total.
+        """
         level = 0
         
         for prop, value in self.priority_fields.items( ):
@@ -37,6 +45,10 @@ class PriorityFilter( BaseModel, Generic[T] ):
         return level
 
     def filter( self, elements: List[T] ) -> Selection[ T ]:
+        """
+            The method compares each element props with the filter parameters, 
+            and sorting data by most simmular elements. 
+        """
         result   = Selection( )
         selected = sorted( elements, key=self.get_field_priority, reverse=True )
 
