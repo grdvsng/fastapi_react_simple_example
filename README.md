@@ -15,5 +15,5 @@
 ###### HELP
 * Run service command 'uvicorn src.main:app --host 0.0.0.0 --reload --port 8000'
 * api docs http://127.0.0.1:8000/docs
-* api interface http://localhost:8000/
+* interface http://localhost:8000/
 * tests cmd "pytest"
