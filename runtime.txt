@@ -1,0 +1,2 @@
+python-3.10.1
+web: uvicorn src.main:app --host 0.0.0.0 --reload --port 8000
